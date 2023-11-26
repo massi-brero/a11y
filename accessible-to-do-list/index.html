@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barrierefreie To Do App</title>
+  </head>
+
+  <body>
+    <div class="container"></div>
+    <div class="content">
+      <h1 tabindex="-1" id="headings"></h1>
+      <form action="index.html" method="post" id="to_do_form">
+        <label for="todo" id="to_do_form">
+          Add a new task to your list (required)
+        </label>
+        <div>
+          <input
+            aria-describedby="example"
+            type="text"
+            class="task_inputs"
+            id="todo_input"
+            required
+          />
+          <input type="submit" value="Add" class="add_tasks" />
+        </div>
+        <div id="example" class="example">Beispiel: Hühner füttern</div>
+        xs
+      </form>
+      <ul id="list" class="list"></ul>
+      <div
+        aria-live="status"
+        aria-live="polite"
+        id="sc_feedback"
+        class="sc_feedback"
+      ></div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

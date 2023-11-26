@@ -1,0 +1,20 @@
+{
+  "name": "accessible-to-do-list",
+  "version": "1.0.0",
+  "description": "Test project for accessible HTML + JS  to show in tutorials.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "a11y"
+  ],
+  "author": "Massisoft",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0"
+  }
+}
