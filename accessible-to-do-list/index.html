@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barrierefreie To Do App</title>
   </head>
@@ -11,9 +12,7 @@
     <div class="content">
       <h1 tabindex="-1" id="headings"></h1>
       <form action="index.html" method="post" id="to_do_form">
-        <label for="todo" id="to_do_form">
-          Add a new task to your list (required)
-        </label>
+        <label for="todo_input"> Add a new task to your list (required) </label>
         <div>
           <input
             aria-describedby="example"
@@ -22,10 +21,14 @@
             id="todo_input"
             required
           />
-          <input type="submit" value="Add" class="add_tasks" />
+          <input
+            type="submit"
+            class="add_task"
+            id="submit_button"
+            value="Hinzufügen"
+          />
         </div>
         <div id="example" class="example">Beispiel: Hühner füttern</div>
-        xs
       </form>
       <ul id="list" class="list"></ul>
       <div
@@ -35,6 +38,6 @@
         class="sc_feedback"
       ></div>
     </div>
-    <script src="./script.js"></script>
   </body>
+  <script src="./script.js"></script>
 </html>
