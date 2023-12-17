@@ -7,12 +7,14 @@ const submitButton = document.querySelector('#submit_button')
 
 toDoForm.addEventListener('submit', (event) => {
   event.preventDefault()
+  const task = todoInput.value
+
+  addTaskToDOM(task)
 })
 
 submitButton.disabled = true
 submitButton.classList.add('invalid')
 todoInput.addEventListener('input', () => {
-  console.log(console.log(todoInput.checkValidity()))
   if (todoInput.checkValidity()) {
     submitButton.disabled = false
     submitButton.classList.remove('invalid')
@@ -21,3 +23,12 @@ todoInput.addEventListener('input', () => {
     submitButton.classList.add('invalid')
   }
 })
+
+const addTaskToDOM = (task) => {
+  const li = document.createElement('li')
+  const taskText = document.createTextNode(task)
+  li.appendChild(taskText)
+
+  todoInput.value = ''
+  list.appendChild(li)
+}
