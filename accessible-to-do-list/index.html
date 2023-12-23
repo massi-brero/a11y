@@ -12,7 +12,7 @@
     <div class="content">
       <h1 tabindex="-1" id="headings"></h1>
       <form action="index.html" method="post" id="to_do_form">
-        <label for="todo_input"> Add a new task to your list (required) </label>
+        <label for="todo_input">Neue Aufgabe hinzufügen: (required) </label>
         <div>
           <input
             aria-describedby="example"
@@ -28,11 +28,11 @@
             value="Hinzufügen"
           />
         </div>
-        <div id="example" class="example">Beispiel: Hühner füttern</div>
+        <small id="example" class="example">Beispiel: Hühner füttern</small>
       </form>
       <ul id="list" class="list"></ul>
       <div
-        aria-live="status"
+        role="status"
         aria-live="polite"
         id="sc_feedback"
         class="sc_feedback"

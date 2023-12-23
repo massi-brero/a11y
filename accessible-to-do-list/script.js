@@ -9,7 +9,9 @@ toDoForm.addEventListener('submit', (event) => {
   event.preventDefault()
   const task = todoInput.value
 
+  removeValue()
   addTaskToDOM(task)
+  screenreaderFeedback(task)
 })
 
 submitButton.disabled = true
@@ -25,10 +27,48 @@ todoInput.addEventListener('input', () => {
 })
 
 const addTaskToDOM = (task) => {
-  const li = document.createElement('li')
-  const taskText = document.createTextNode(task)
-  li.appendChild(taskText)
+  const id = generateID()
+  const task = createElement('li', '', {
+    type: 'class',
+    value: 'task',
+  })
+}
 
+const removeValue = () => {
   todoInput.value = ''
-  list.appendChild(li)
+}
+
+const screenreaderFeedback = (task, feedback = 'added') => {
+  scFeedback.textContent = `${task} ${feedback}.`
+}
+
+/**
+ * attribute needs to be passed as {type: 'xyz', value: '1122'}
+ */
+const createElement = (tagName, textNode, parent, attribute = null) => {
+  const node = document.createElement(tagName)
+
+  if (textNode) {
+    const text = document.createTextNode(textNode)
+    node.appendChild(text)
+  }
+
+  if (attribute && 'type' in attribute && 'value' in attribute) {
+    node.setAttribute(attribute.type, attribute.value)
+  }
+
+  isDOM(parent) && parent.appendChild(node)
+  return node
+}
+
+const isDOM = (el) => el && (el instanceof Element || el instanceof Document)
+
+const generateID = () => {
+  const idPrefix = 'task_num_'
+  const tasks = document.querySelectorAll('#list > li')
+
+  if (Array.isArray(tasks)) {
+    return `${idPrefix}${tasks.length}`
+  }
+  return null
 }

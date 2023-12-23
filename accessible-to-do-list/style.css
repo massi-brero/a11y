@@ -25,6 +25,9 @@
 
 input.invalid {
   cursor: not-allowed;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  color: gray;
 }
 
 #list {
@@ -39,9 +42,9 @@ input.invalid {
   display: block;
   list-style: none;
   border: 1px grey solid;
-  background-color: wheat;
+  background-color: lightgoldenrodyellow;
   border-radius: 8px;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 01rem;
   margin: 0.5rem 0;
   width: fit-content;
 }
