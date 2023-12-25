@@ -39,7 +39,9 @@ input.invalid {
 }
 
 #list li {
-  display: block;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   list-style: none;
   border: 1px grey solid;
   background-color: lightgoldenrodyellow;
@@ -47,4 +49,18 @@ input.invalid {
   padding: 0.5rem 01rem;
   margin: 0.5rem 0;
   width: fit-content;
+}
+
+#list li * {
+  margin-left: 1rem;
+}
+
+#list li button {
+  background-color: red;
+  margin-left: 0.5rem;
+  color: white;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  border: red 1px solid;
+  box-shadow: 2px 2px 2px grey;
 }
