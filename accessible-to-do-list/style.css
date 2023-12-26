@@ -44,20 +44,55 @@ input.invalid {
   align-items: center;
   list-style: none;
   border: 1px grey solid;
-  background-color: lightgoldenrodyellow;
+  background-color: white;
   border-radius: 8px;
   padding: 0.5rem 01rem;
   margin: 0.5rem 0;
   width: fit-content;
+  height: 32px;
 }
 
-#list li * {
-  margin-left: 1rem;
+.custom_checkbox:hover {
+  cursor: pointer;
+}
+
+.custom_checkbox:before {
+  content: '';
+  padding-left: 3px;
+  padding-bottom: 1px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  display: inline-block;
+  border: grey solid 1px;
+  border-radius: 3px;
+  visibility: visible;
+  box-shadow: 1px 1px lightgray;
+}
+
+.custom_checkbox:checked:before {
+  content: '\1F44D';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: white;
+  box-shadow: none;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  font-size: 9px;
+  font-size: 1.25rem;
+}
+
+#list li [type='checkbox'] {
+  margin-right: 1.5rem;
+  width: 20px;
+  height: 30px;
 }
 
 #list li button {
   background-color: red;
-  margin-left: 0.5rem;
+  margin-left: 2.5rem;
   color: white;
   border-radius: 4px;
   padding: 0.25rem 0.5rem;

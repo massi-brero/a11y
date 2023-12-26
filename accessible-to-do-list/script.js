@@ -34,11 +34,12 @@ const addTaskToDOM = (task) => {
     value: 'checkbox',
   })
   checkbox.setAttribute('id', id)
-  const label = createElement('label', task, taskItem, {
+  checkbox.setAttribute('class', 'custom_checkbox')
+  createElement('label', task, taskItem, {
     type: 'for',
     value: id,
   })
-  const deleteButton = createElement('button', 'Delete Task', taskItem, {
+  createElement('button', 'Delete Task', taskItem, {
     type: 'class',
     value: 'delete_task',
   })
