@@ -7,6 +7,11 @@
   padding: 2rem;
 }
 
+#heading {
+  color: blue;
+  margin-bottom: 2rem;
+}
+
 .add_task {
   background-color: blue;
   margin-left: 0.5rem;
@@ -75,13 +80,12 @@ input.invalid {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-color: white;
   box-shadow: none;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   text-align: center;
   font-size: 9px;
-  font-size: 1.25rem;
+  font-size: 0.8rem;
 }
 
 #list li [type='checkbox'] {

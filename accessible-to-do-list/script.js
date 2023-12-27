@@ -25,6 +25,16 @@ todoInput.addEventListener('input', () => {
     submitButton.classList.add('invalid')
   }
 })
+list.addEventListener('click', (event) => {
+  if (hasClassname(event.target, 'delete_task')) {
+    const li = event.target.closest('li')
+    const taskName = event.target.previousElementSibling.textContent
+
+    removeTask(li)
+    setFocus(heading)
+    screenreaderFeedback(taskName, 'removed')
+  }
+})
 
 const addTaskToDOM = (task) => {
   const id = generateID()
@@ -47,6 +57,10 @@ const addTaskToDOM = (task) => {
 
 const removeValue = () => {
   todoInput.value = ''
+}
+
+const removeTask = (target) => {
+  list.removeChild(target)
 }
 
 const screenreaderFeedback = (task, feedback = 'added') => {
@@ -82,4 +96,12 @@ const generateID = () => {
     return `${idPrefix}${tasks.length}`
   }
   return null
+}
+
+const hasClassname = (element, classname) => {
+  return element.classList.contains(classname)
+}
+
+const setFocus = (element) => {
+  element.focus()
 }
